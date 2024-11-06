@@ -1,0 +1,146 @@
+﻿{
+   "CodeGenerationMode": 4,
+   "ContextClassName": "test2xluploadContext",
+   "ContextNamespace": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": "Models22",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "WebAppDemo.ServiceDefaults",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 2,
+   "SelectedToBeGenerated": 0,
+   "T4TemplatePath": null,
+   "Tables": [
+      {
+         "Name": "[dbo].[BusinessUnitPriceDataSource]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[DataSources]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[dhhitems]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[IntHistoricPurchasePrices]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[PriceTypes]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[XLPurchasePrices]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[XLPurchasePrices_Temp]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[XLPurchasePricesProductionAreas_Temp]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[XLPP].[BusinessUnits]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[XLPP].[dhh_BestmixItemLinks]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[XLPP].[dhh_BestmixItems]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[XLPP].[dhh_BusinessStructureProductionAreas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[XLPP].[dhh_BusinessStructures]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[XLPP].[dhh_Countries]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[XLPP].[dhh_Items]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[XLPP].[dhh_PriceTypeConfigurations]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[XLPP].[dhh_ProductionAreas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[XLPP].[Jobs]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[XLPP].[JobStatus]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[XLPP].[JobType]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[XLPP].[Systems]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[XLPP].[Users]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[dhhdata]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[getBuTemplateData]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[getUploadedXLPurchasePriceHeaders]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[mergeXLPurchasePrices]",
+         "ObjectType": 1
+      }
+   ],
+   "UiHint": null,
+   "UncountableWords": null,
+   "UseAsyncStoredProcedureCalls": true,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDateOnlyTimeOnly": true,
+   "UseDbContextSplitting": false,
+   "UseDecimalDataAnnotationForSprocResult": true,
+   "UseFluentApiOnly": false,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": true,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": true,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": true,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UsePrefixNavigationNaming": false,
+   "UseSchemaFolders": true,
+   "UseSchemaNamespaces": false,
+   "UseSpatial": false,
+   "UseT4": false
+}

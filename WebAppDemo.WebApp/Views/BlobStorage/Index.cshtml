@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Azure Blob Storage";
+    var blobs = ViewBag.Blobs as IEnumerable<Azure.Storage.Blobs.Models.BlobItem>;
+    var containerMetadata = ViewBag.ContainerMetadata as IDictionary<string, string>;
+}
+
+<div class="container mt-4">
+    <h2>Azure Blob Storage</h2>
+    <a class="btn btn-primary" href="@Url.Action("RetrieveContainerProperties", "BlobStorage")">Edit Container Metadata</a>
+    <table class="table table-striped mt-4">
+        <thead>
+            <tr>
+                <th>Blob Name</th>
+                <th>Size (Bytes)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (blobs != null)
+            {
+                foreach (var blob in blobs)
+                {
+                    <tr>
+                        <td>@blob.Name</td>
+                        <td>@blob.Properties.ContentLength</td>
+                        <td>
+                            <a class="btn btn-info" href="@Url.Action("RetrieveBlobProperties", "BlobStorage", new { blobName = blob.Name })">Details</a>
+                            <a class="btn btn-warning" href="@Url.Action("Download", "BlobStorage", new { fileName = blob.Name })">Download</a>
+                            @* <a class="btn btn-warning" href="@Url.Action("SetBlobMetadata", "BlobStorage", new { blobName = blob.Name })">Edit</a> *@
+                            <a class="btn btn-danger" href="@Url.Action("Delete", "BlobStorage", new { fileName = blob.Name })">Delete</a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="3">No blobs available</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+   
+
+    <div class="mt-5">
+        <h3>Upload New Blob</h3>
+        <form asp-action="Upload" asp-controller="BlobStorage" enctype="multipart/form-data" method="post">
+            <div class="form-group">
+                <label for="file">Select a file to upload:</label>
+                <input type="file" class="form-control-file" name="file" id="file" required />
+            </div>
+            <button type="submit" class="btn btn-success">Upload</button>
+        </form>
+    </div>
+</div>

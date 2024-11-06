@@ -1,0 +1,50 @@
+﻿@{
+	ViewBag.Title = "Container Properties and Metadata";
+	var properties = ViewBag.ContainerProperties as Azure.Storage.Blobs.Models.BlobContainerProperties;
+	var metadata = properties.Metadata;
+}
+
+<div class="container mt-4">
+	<h2>Container Properties</h2>
+	<ul class="list-group">
+		<li class="list-group-item">Last Modified: @properties.LastModified</li>
+		<li class="list-group-item">ETag: @properties.ETag</li>
+		<li class="list-group-item">Lease Status: @properties.LeaseStatus</li>
+	</ul>
+	<form asp-action="SetBlobMetadata" asp-controller="BlobStorage" method="post">
+
+		<div class="form-group">
+			<h4>Current Metadata</h4>
+			@if (metadata != null && metadata.Any())
+			{
+				foreach (var meta in metadata)
+				{
+					<div class="row">
+						<div class="col-md-4">
+							<label>Key: @meta.Key</label>
+							<input type="text" class="form-control" name="newMetadata[@meta.Key]" value="@meta.Value" />
+						</div>
+					</div>
+				}
+			}
+			else
+			{
+				<div>No metadata available for this blob.</div>
+			}
+		</div>
+
+		<button type="submit" class="btn btn-primary">Save Metadata</button>
+	</form>
+	<h2 class="mt-4">Set Container Metadata</h2>
+	<form method="post" asp-action="SetContainerMetadata">
+		<div class="form-group">
+			<label for="metadataKey">Metadata Key:</label>
+			<input type="text" class="form-control" id="metadataKey" name="key" required>
+		</div>
+		<div class="form-group">
+			<label for="metadataValue">Metadata Value:</label>
+			<input type="text" class="form-control" id="metadataValue" name="value" required>
+		</div>
+		<button type="submit" class="btn btn-primary">Set Metadata</button>
+	</form>
+</div>

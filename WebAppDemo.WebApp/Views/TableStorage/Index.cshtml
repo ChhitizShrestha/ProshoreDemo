@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Table Storage";
+}
+
+<h2 class="text-center my-4">Azure Table Storage</h2>
+
+<div class="container">
+    <!-- Insert Entity Form -->
+    <div class="card my-4">
+        <div class="card-header">
+            <h5>Insert User</h5>
+        </div>
+        <div class="card-body">
+            <form asp-action="Insert" method="post" class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="PartitionKey">Partition Key</label>
+                    <input type="text" class="form-control" id="PartitionKey" name="PartitionKey" required />
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="RowKey">Row Key</label>
+                    <input type="text" class="form-control" id="RowKey" name="RowKey" required />
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="Name">Name</label>
+                    <input type="text" class="form-control" id="Name" name="Name" required />
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="Email">Email</label>
+                    <input type="email" class="form-control" id="Email" name="Email" required />
+                </div>
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary mt-2">Insert User</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Retrieve Entity Form -->
+    <div class="card">
+        <div class="card-header">
+            <h5>Retrieve User</h5>
+        </div>
+        <div class="card-body">
+            <form asp-action="Retrieve" method="get" class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="partitionKey">Partition Key</label>
+                    <input type="text" class="form-control" id="partitionKey" name="partitionKey" required />
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="rowKey">Row Key</label>
+                    <input type="text" class="form-control" id="rowKey" name="rowKey" required />
+                </div>
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary mt-2">Retrieve User</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

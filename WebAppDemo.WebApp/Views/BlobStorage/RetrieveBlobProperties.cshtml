@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Blob Properties and Metadata";
+    var blobProperties = ViewBag.BlobProperties as Azure.Storage.Blobs.Models.BlobProperties;
+    var blobName= ViewBag.BlobName as string;
+    var metadata = ViewBag.BlobMetadata as IDictionary<string, string>;
+
+}
+
+<div class="container mt-4">
+    <h2>@blobName ( Blob Properties)</h2>
+    <ul class="list-group">
+        <li class="list-group-item">Last Modified: @blobProperties.LastModified</li>
+        <li class="list-group-item">Content Length: @blobProperties.ContentLength</li>
+        <li class="list-group-item">Content Type: @blobProperties.ContentType</li>
+        <li class="list-group-item">ETag: @blobProperties.ETag</li>
+    </ul>
+    <div class="container mt-4">
+        <h2>Edit Metadata for Blob: @blobName</h2>
+
+        <form asp-action="SetBlobMetadata" asp-controller="BlobStorage" method="post">
+            <input type="hidden" name="blobName" value="@blobName" />
+
+            <div class="form-group">
+                <h4>Current Metadata</h4>
+                @if (metadata != null && metadata.Any())
+                {
+                    foreach (var meta in metadata)
+                    {
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Key: @meta.Key</label>
+                                <input type="text" class="form-control" name="newMetadata[@meta.Key]" value="@meta.Value" />
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div>No metadata available for this blob.</div>
+                }
+            </div>
+
+            <button type="submit" class="btn btn-primary">Save Metadata</button>
+        </form>
+
+    <h2 class="mt-4">Set Blob Metadata</h2>
+    <form method="post" asp-action="SetBlobMetadata">
+        <input type="hidden" name="blobName" value="@blobName" />
+        <div class="form-group">
+            <label for="metadataKey">Metadata Key:</label>
+            <input type="text" class="form-control" id="metadataKey" name="key" required>
+        </div>
+        <div class="form-group">
+            <label for="metadataValue">Metadata Value:</label>
+            <input type="text" class="form-control" id="metadataValue" name="value" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Set Metadata</button>
+    </form>
+</div>

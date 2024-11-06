@@ -1,0 +1,46 @@
+﻿@{
+	ViewBag.Title = "Retrieve Entity";
+	var user = ViewBag.User as WebAppDemo.ServiceDefaults.Model.User; // Replace with your actual namespace
+}
+
+<div class="container mt-5">
+	<div class="card">
+		<div class="card-header">
+			<h3>Retrieve Entity Details</h3>
+		</div>
+		<div class="card-body">
+			@if (user != null)
+			{
+				<div class="mb-3">
+					<label><strong>Partition Key:</strong></label>
+					<p>@user.PartitionKey</p>
+				</div>
+				<div class="mb-3">
+					<label><strong>Row Key:</strong></label>
+					<p>@user.RowKey</p>
+				</div>
+				<div class="mb-3">
+					<label><strong>Name:</strong></label>
+					<p>@user.Name</p>
+				</div>
+				<div class="mb-3">
+					<label><strong>Email:</strong></label>
+					<p>@user.Email</p>
+				</div>
+				@* <div class="mb-3">
+					<label><strong>Phone:</strong></label>
+					<p>@user.</p>
+				</div> *@
+			}
+			else
+			{
+				<div class="alert alert-warning">
+					No entity details found.
+				</div>
+			}
+		</div>
+		<div class="card-footer">
+			<a href="@Url.Action("Index", "TableStorage")" class="btn btn-primary">Back to List</a>
+		</div>
+	</div>
+</div>

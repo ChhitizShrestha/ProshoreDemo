@@ -1,0 +1,22 @@
+﻿<!-- Factorial Calculation -->
+<a href="@Url.Action("CalculateFactorialSync", "Taks", new { n = 20 })">Calculate Factorial Synchronously</a>
+<a href="@Url.Action("CalculateFactorialAsync", "Taks", new { n = 20 })">Calculate Factorial Asynchronously</a>
+
+<!-- Fetch Data -->
+<a href="@Url.Action("FetchData", "Taks")">Fetch Data</a>
+
+<!-- Fetch Data with Cancellation -->
+<form method="get" action="@Url.Action("FetchDataWithCancellation", "Taks")">
+    <button type="submit">Fetch Data With Cancellation</button>
+</form>
+<!-- Calculate Factorial With Cancellation -->
+<form method="get" action="@Url.Action("CalculateFactorialAsync", "Taks")">
+    <input type="number" name="n" value="20" />
+    <button type="submit">Calculate Factorial With Cancellation</button>
+</form>
+
+<!-- Calculate Factorial With Cancellation -->
+<form method="get" action="@Url.Action("CalculateFactorialWithThirdPartyAsync", "Taks")">
+    <input type="number" name="n" value="20" />
+    <button type="submit">Calculate Factorial CalculateFactorial With Third Party Async Cancellation</button>
+</form>

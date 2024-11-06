@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsAspireSharedProject>true</IsAspireSharedProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models22\**" />
+    <Compile Remove="Models\**" />
+    <EmbeddedResource Remove="Models22\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <None Remove="Models22\**" />
+    <None Remove="Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="NewFolder\DataLakeStorageService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Azure.Data.Tables" Version="12.9.0" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.21.2" />
+    <PackageReference Include="Azure.Storage.Files.Shares" Version="12.19.1" />
+    <PackageReference Include="Azure.Storage.Queues" Version="12.19.1" />
+
+    <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="8.7.0" />
+    <PackageReference Include="Microsoft.Extensions.ServiceDiscovery" Version="8.1.0" />
+    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.9.0" />
+    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.9.0" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.9.0" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.9.0" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Runtime" Version="1.9.0" />
+  </ItemGroup>
+
+</Project>
